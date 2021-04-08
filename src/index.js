@@ -8,9 +8,11 @@ import {Provider} from 'react-redux'
 import rootReducer from './Services/Reducers'
 
 import thunk from 'redux-thunk'
-const middleware = [thunk]
+import logger from 'redux-logger'
+const middleware = [thunk,logger]
 const store = createStore(rootReducer,applyMiddleware(...middleware))
 console.log("store data",store)
+
 
 
 ReactDOM.render(

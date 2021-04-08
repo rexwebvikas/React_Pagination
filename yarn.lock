@@ -7362,6 +7362,11 @@
   "resolved" "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
 
+"logger@^0.0.1":
+  "integrity" "sha1-ywgXH4pvb2dLhJna31C+1L77csQ="
+  "resolved" "https://registry.npmjs.org/logger/-/logger-0.0.1.tgz"
+  "version" "0.0.1"
+
 "loglevel@^1.6.8":
   "integrity" "sha512-Hesni4s5UkWkwCGJMQGAh71PaLUmKFM60dHvq0zi/vDhhrzuk+4GgNbTXJ12YYQJn6ZKBDNIjYcuQGKudvqrIw=="
   "resolved" "https://registry.yarnpkg.com/loglevel/-/loglevel-1.7.1.tgz"

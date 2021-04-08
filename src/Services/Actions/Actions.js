@@ -1,15 +1,19 @@
 
 import axios from 'axios'
-import {Add_To_Cart} from '../Constants'
+import {Add_To_Cart, DELETE_ITEM,EDIT_ITEM,SEARCH_BAR} from '../Constants'
 
 export const addToCart = (index)=>dispatch =>{
 
-  axios.get (`https://api.instantwebtools.net/v1/passenger?page=${index}&size=20`)
+  axios.get (`https://api.instantwebtools.net/v1/passenger?page=${index}&size=5`)
   .then(res=>{
+    console.log(res,"ressssssssssssssssssssssssss")
     dispatch({
       type:Add_To_Cart,
-      payload:res.data
+      payload:res.data,
+    
+
     });
+    
   })
   .catch(err=>{
     dispatch({
@@ -18,5 +22,34 @@ export const addToCart = (index)=>dispatch =>{
 
     });
   })
+
   
+}
+export const Delete =(index)=>{
+
+  return({
+    type: DELETE_ITEM , 
+    payload: index
+  })
+    
+  
+}
+export const Edit = (id)=>{
+
+     return({
+
+      type:EDIT_ITEM,
+      payload:id
+
+     })
+
+}
+
+export const search_bar= (key)=>{
+
+
+  return({
+    type:SEARCH_BAR,
+    payload:key
+  })
 }

@@ -3,12 +3,14 @@ import './App.css';
 // import UserPage from './Components/ShowData';
 import Home from './Components/Home'
 
+
+
 function App() {
   return (
     <>
-        {/* <HomeContainer/> */}
-        {/* <UserPage/> */}
+       
         <Home />
+       
     </>
     
   );
