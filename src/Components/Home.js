@@ -24,17 +24,28 @@ const Home =()=>{
     const page=useSelector(state=>state.cardItems.totalPages)
   const [data,setData]=useState([]);
   const [editTable, setEditTable] = useState(false)
-  const [filter, setFilter] = useState();
-  const [edit,setEdit] = useState({
-    name:"",
-    trips:"",
-    country:"",
-    logo:"",
-    head_quaters:"",
-    id:""
-    
-    
+  const [inpData, setinpData] = useState();
+  const filteredData = data.filter((i)=>{return(i.name.includes(inpData))})
+
+  console.log("Filtered Data ",filteredData);
+  const [edit, setEdit] = useState({
+    name: "",
+    trips: "",
+    country: "",
+    logo: "",
+    head_quaters: "",
+    id: ""
   })
+
+  const handleInput = (e) => {
+    console.log("filterDataaaaaaaaaaaaaaaaaaa", inpData);
+    setinpData(e.target.value);
+  }
+
+
+
+
+
 
 
 
@@ -43,6 +54,17 @@ const Home =()=>{
 
   // }
   
+  useEffect(()=>{
+    if(inpData=="")
+    {
+      setData(FirstName)
+    }
+    else
+    {
+      setData(filteredData)
+    }
+  },[inpData])
+
   console.log("Page ",page)
   console.log("Data",data);
     useEffect(()=>{
@@ -71,7 +93,7 @@ const Home =()=>{
 
     { editTable ? null: <div>
     <div>
-    <input type="text" placeholder="Search.." name="search"/>
+    <input type="Search" placeholder="Search.." name="search" onChange={handleInput}/>
     </div>
         <div className="cart-warpper">
     

@@ -25,18 +25,18 @@ export const addToCart = (index)=>dispatch =>{
 
   
 }
-export const Delete =(index)=>{
+export const Delete =(index)=>dispatch=>{
 
-  return({
+  return dispatch({
     type: DELETE_ITEM , 
     payload: index
   })
     
   
 }
-export const Edit = (id)=>{
+export const Edit = (id)=>dispatch=>{
 
-     return({
+     return dispatch({
 
       type:EDIT_ITEM,
       payload:id
