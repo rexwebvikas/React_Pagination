@@ -35,7 +35,7 @@ export default function cardItems(state = initialState,action){
 
         case EDIT_ITEM:{
 
-            const del1 = state.cardData.data.filter((val)=>{return(val._id.includes(action.payload.id))})
+            const del1 = state.cardData.data.filter((val)=>{return(val._id == action.payload.id)})
             console.log(del1, "heloooooooooooooooooooooooooooooo")
              del1[0].name = action.payload.name;
              del1[0].trips = action.payload.trips;
