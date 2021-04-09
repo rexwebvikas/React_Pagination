@@ -24,26 +24,26 @@ const Home =()=>{
     const page=useSelector(state=>state.cardItems.totalPages)
   const [data,setData]=useState([]);
   const [editTable, setEditTable] = useState(false)
-  const [inpData, setinpData] = useState();
-  const filteredData = data.filter((i)=>{return(i.name.includes(inpData))})
+   const [inpData, setinpData] = useState();
+  const filterData = data.filter((i)=>{return(i.name.includes(inpData))})
 
-  console.log("Filtered Data ",filteredData);
+  
   const [edit, setEdit] = useState({
     name: "",
     trips: "",
     country: "",
-    logo: "",
     head_quaters: "",
     id: ""
   })
 
-  const handleInput = (e) => {
-    console.log("filterDataaaaaaaaaaaaaaaaaaa", inpData);
-    setinpData(e.target.value);
-  }
+  
 
 
+const handleInput =(e)=>{
+  console.log("filterrrDatatatatatatata" ,inpData)
+  setinpData(e.target.value);
 
+}
 
 
 
@@ -54,14 +54,16 @@ const Home =()=>{
 
   // }
   
+
+
   useEffect(()=>{
-    if(inpData=="")
-    {
+
+    if(inpData==''){
       setData(FirstName)
     }
-    else
-    {
-      setData(filteredData)
+    else{
+
+      setData(filterData)
     }
   },[inpData])
 
@@ -93,7 +95,7 @@ const Home =()=>{
 
     { editTable ? null: <div>
     <div>
-    <input type="Search" placeholder="Search.." name="search" onChange={handleInput}/>
+    <input type="Search" placeholder="Search.." name="search" onChange={handleInput} />
     </div>
         <div className="cart-warpper">
     
@@ -148,7 +150,6 @@ const Home =()=>{
               ; setEdit({
                 id: i._id,
                 name: i.name,
-                logo: i.logo,
                 country: i.airline.country,
                 head_quaters:i.airline.head_quaters,
                 trips: i.trips
@@ -164,8 +165,6 @@ const Home =()=>{
     </TableContainer>
        
     <Pagination count={page} onChange={(e,i)=>{dispatch(addToCart(i))}}></Pagination>
-    {/* <Pagination count={page} onChange={handleperpage}></Pagination> */}
-
         <div>   
           </div>
            </div>

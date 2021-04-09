@@ -1,14 +1,12 @@
 
 import {Add_To_Cart, DELETE_ITEM, EDIT_ITEM,SEARCH_BAR} from '../Constants'
-// import {action} from '../Actions/Actions';
-
 
 const initialState ={
     cardData:[],
     totalPages:""
    
 }
-// console.log(initialState,"carddata")
+
 export default function cardItems(state = initialState,action){
  
     switch(action.type){

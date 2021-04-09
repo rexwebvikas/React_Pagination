@@ -30,12 +30,8 @@ const dispatch = useDispatch();
             <br></br>
             <input  placeholder={props.edit.country} name="country" onChange={hnadleInput}/>
             <br></br>
-            <input placeholder={props.edit.logo} name ="logo" onChange={hnadleInput}/>
-            <br></br>
             <input placeholder ={props.edit.head_quaters} name="head_quaters" onChange={hnadleInput}/>
             <br></br>
-
-            {/* <button onClick={()=>props.setEditTable(false)}>UPDATE</button> */}
              <Button variant="contained" color="primary" onClick={()=>{props.setEditTable(false); dispatch(Edit(props.edit))}}>UPDATE</Button>
        </form>
        }
