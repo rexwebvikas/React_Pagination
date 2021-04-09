@@ -45,11 +45,11 @@ export const Edit = (id)=>dispatch=>{
 
 }
 
-export const search_bar= (key)=>{
+// export const search_bar= (key)=>{
 
 
-  return({
-    type:SEARCH_BAR,
-    payload:key
-  })
-}
+//   return({
+//     type:SEARCH_BAR,
+//     payload:key
+//   })
+// }
